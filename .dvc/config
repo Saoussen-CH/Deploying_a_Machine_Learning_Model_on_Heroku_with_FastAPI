@@ -1,0 +1,2 @@
+['remote "s3romte"']
+    url = s3://udacitymlopsporject3/artifact/
