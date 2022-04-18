@@ -16,6 +16,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      DVC_REMOTE_REPOSITORY: s3://udacitymlopsporject3/artifact/
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.8
@@ -36,11 +38,10 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-    - name: Setup DVC
-      uses: iterative/setup-dvc@v1
-      
-    - name: Pull DVC artifacts 
-      run: dvc pull -f
+    - name: Sets up DVC remote
+      run: |
+        dvc remote add s3romte ${{ env.DVC_REMOTE_REPOSITORY }}
+        dvc pull
       
     - name: Lint with flake8
       run: |
