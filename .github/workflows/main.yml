@@ -44,8 +44,8 @@ jobs:
 
     - name: Sets up DVC remote
       run: |
-        dvc remote add -f s3romte ${{ env.DVC_REMOTE_REPOSITORY }}
-        dvc pull
+        dvc remote add -d s3romte ${{ env.DVC_REMOTE_REPOSITORY }}
+        dvc pull -f
       
     - name: Lint with flake8
       run: |
