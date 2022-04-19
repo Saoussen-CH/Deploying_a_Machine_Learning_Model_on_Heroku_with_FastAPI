@@ -3,11 +3,11 @@ from sklearn.model_selection import train_test_split
 import pickle
 import pandas as pd
 import os
-from starter.ml.data import process_data
+from .data import process_data
 import numpy as np
 import sys
 sys.path.append('C:/Users/s.chaabnia/Desktop/nd0821-c3-starter-code-master/nd0821-c3-starter-code-master/starter/starter/ml')
-from starter.ml.model import train_model, compute_model_metrics, inference
+from .model import train_model, compute_model_metrics, inference
 import pytest
 
 
