@@ -2,8 +2,8 @@ from fastapi.testclient import TestClient
 from pathlib import Path
 import os
 import sys
-
-from main import app
+sys.path.append('C:/Users/s.chaabnia/Desktop/nd0821-c3-starter-code-master/nd0821-c3-starter-code-master/starter/starter/ml')
+from .main import app
 
 client = TestClient(app)
 

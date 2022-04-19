@@ -1,10 +1,14 @@
 # Put the code for your API here.
 import os
 import yaml
+import pandas as pd
+import uvicorn
+import pickle
+
 from fastapi import FastAPI
 from pydantic import BaseModel
-import pandas as pd
-import pickle
+
+
 from starter.ml.model import *
 from starter.ml.data import *
 
@@ -84,3 +88,6 @@ def predict(data: Input):
     else:
         prediction = "Salary <= 50k"
     return {"prediction": prediction}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
