@@ -41,10 +41,7 @@ jobs:
 
     - name: Setup DVC
       uses: iterative/setup-dvc@v1
-<<<<<<< HEAD
-=======
       
->>>>>>> 7ff8c1db36065e9df7aee2dd1215577fbee32afa
     - name: Sets up DVC remote
       run: |
         dvc remote add -d s3romte ${{ env.DVC_REMOTE_REPOSITORY }}
