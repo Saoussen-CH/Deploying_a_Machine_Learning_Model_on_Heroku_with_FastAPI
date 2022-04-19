@@ -41,10 +41,10 @@ jobs:
 
     - name: Setup DVC
       uses: iterative/setup-dvc@v1
-      
+
     - name: Sets up DVC remote
       run: |
-        dvc remote add -d s3romte ${{ env.DVC_REMOTE_REPOSITORY }}
+        dvc remote add s3romte ${{ env.DVC_REMOTE_REPOSITORY }}
         dvc pull
       
     - name: Lint with flake8
